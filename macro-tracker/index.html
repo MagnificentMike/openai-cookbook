@@ -12,51 +12,46 @@
       background: #0f172a;
       color: #e2e8f0;
       min-height: 100vh;
-      padding: 2rem 1rem;
+      padding: 1rem 1rem 6rem;
     }
 
     h1 {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.75rem;
+      margin-bottom: 0.25rem;
       color: #38bdf8;
     }
 
     .subtitle {
       text-align: center;
       color: #94a3b8;
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    .container { max-width: 600px; margin: 0 auto; }
 
     .card {
       background: #1e293b;
       border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
       border: 1px solid #334155;
     }
 
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
+    .form-group { margin-bottom: 1rem; }
 
     label {
       display: block;
       font-weight: 600;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
       color: #cbd5e1;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     input, select {
       width: 100%;
-      padding: 0.6rem 0.75rem;
+      padding: 0.55rem 0.7rem;
       border: 1px solid #475569;
       border-radius: 8px;
       background: #0f172a;
@@ -69,18 +64,13 @@
       border-color: #38bdf8;
     }
 
-    .height-row {
-      display: flex;
-      gap: 0.75rem;
-    }
-
+    .height-row { display: flex; gap: 0.75rem; }
     .height-row > div { flex: 1; }
 
-    .height-row input { width: 100%; }
-
-    button {
+    button, .btn {
+      display: block;
       width: 100%;
-      padding: 0.75rem;
+      padding: 0.7rem;
       background: #38bdf8;
       color: #0f172a;
       border: none;
@@ -89,72 +79,165 @@
       font-weight: 700;
       cursor: pointer;
       transition: background 0.2s;
-    }
-
-    button:hover { background: #7dd3fc; }
-
-    #results { display: none; }
-
-    .bmr-display {
       text-align: center;
-      padding: 1rem;
+      text-decoration: none;
     }
 
-    .bmr-display .value {
-      font-size: 2.5rem;
+    button:hover, .btn:hover { background: #7dd3fc; }
+
+    .btn-secondary {
+      background: #334155;
+      color: #e2e8f0;
+    }
+    .btn-secondary:hover { background: #475569; }
+
+    .btn-danger {
+      background: #7f1d1d;
+      color: #fca5a5;
+    }
+    .btn-danger:hover { background: #991b1b; }
+
+    .btn-small {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.85rem;
+      width: auto;
+      display: inline-block;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .btn-row button { flex: 1; }
+
+    /* Screens */
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    /* Nav bar */
+    .nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #1e293b;
+      border-top: 1px solid #334155;
+      display: flex;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      flex: 1;
+      padding: 0.6rem 0;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.7rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: color 0.2s;
+      width: auto;
+    }
+
+    .nav-btn.active { color: #38bdf8; }
+    .nav-btn:hover { color: #e2e8f0; background: none; }
+
+    .nav-icon {
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    /* Stats displays */
+    .stat-row {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+
+    .stat-item .stat-value {
+      font-size: 1.5rem;
       font-weight: 800;
       color: #38bdf8;
     }
 
-    .bmr-display .label-text {
+    .stat-item .stat-label {
+      font-size: 0.7rem;
       color: #94a3b8;
-      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
     }
 
-    .tdee-display {
-      text-align: center;
-      margin-top: 0.5rem;
+    /* Progress bar */
+    .progress-wrap {
+      margin: 0.75rem 0 0.5rem;
     }
 
-    .tdee-display .value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #a78bfa;
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      color: #94a3b8;
     }
 
+    .progress-bar {
+      height: 10px;
+      background: #334155;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.3s;
+    }
+
+    .fill-cal { background: #38bdf8; }
+    .fill-protein { background: #a78bfa; }
+    .fill-carbs { background: #34d399; }
+    .fill-fat { background: #fbbf24; }
+    .fill-over { background: #f87171; }
+
+    /* Section title */
     .section-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       color: #38bdf8;
     }
 
-    .day-row {
+    /* Food log entries */
+    .food-entry {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.65rem 0;
+      padding: 0.6rem 0;
       border-bottom: 1px solid #334155;
     }
 
-    .day-row:last-child { border-bottom: none; }
+    .food-entry:last-child { border-bottom: none; }
 
-    .day-name {
+    .food-name {
       font-weight: 600;
-      min-width: 100px;
+      font-size: 0.9rem;
     }
 
-    .macros {
+    .food-macros {
       display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      margin-top: 0.2rem;
     }
 
     .macro-pill {
-      padding: 0.25rem 0.6rem;
-      border-radius: 6px;
+      padding: 0.15rem 0.45rem;
+      border-radius: 5px;
       font-weight: 600;
     }
 
@@ -163,6 +246,26 @@
     .macro-carbs { background: #1a3a2a; color: #6ee7b7; }
     .macro-fat { background: #3b2f1a; color: #fbbf24; }
 
+    .delete-btn {
+      background: none;
+      border: none;
+      color: #64748b;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      width: auto;
+    }
+
+    .delete-btn:hover { color: #f87171; background: none; }
+
+    .empty-state {
+      text-align: center;
+      color: #64748b;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Goal selector */
     .goal-selector {
       display: flex;
       gap: 0.5rem;
@@ -171,15 +274,15 @@
 
     .goal-btn {
       flex: 1;
-      padding: 0.5rem;
-      font-size: 0.85rem;
+      padding: 0.45rem;
+      font-size: 0.8rem;
       border-radius: 8px;
       background: #334155;
       color: #94a3b8;
       cursor: pointer;
       border: 2px solid transparent;
       font-weight: 600;
-      transition: all 0.2s;
+      width: auto;
     }
 
     .goal-btn.active {
@@ -188,27 +291,71 @@
       background: #1e3a5f;
     }
 
-    .goal-btn:hover { color: #e2e8f0; }
+    .goal-btn:hover { color: #e2e8f0; background: #334155; }
 
-    .weekly-total {
-      text-align: center;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 2px solid #475569;
-      color: #94a3b8;
-      font-size: 0.9rem;
+    /* Date nav */
+    .date-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
 
-    .weekly-total span {
-      color: #38bdf8;
+    .date-nav button {
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .date-label {
       font-weight: 700;
+      font-size: 1rem;
+      min-width: 160px;
+      text-align: center;
+    }
+
+    /* History */
+    .history-day {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #334155;
+    }
+
+    .history-day:last-child { border-bottom: none; }
+
+    .history-date {
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .history-macros {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.8rem;
     }
 
     .error {
       color: #f87171;
-      font-size: 0.85rem;
-      margin-top: 0.25rem;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
       display: none;
+    }
+
+    .profile-summary {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-summary span {
+      color: #e2e8f0;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -216,216 +363,480 @@
 
 <div class="container">
   <h1>Macro Tracker</h1>
-  <p class="subtitle">Calculate your BMR, TDEE, and daily macro goals</p>
+  <p class="subtitle">Track your daily nutrition</p>
 
-  <div class="card" id="inputForm">
-    <div class="form-group">
-      <label>Height</label>
-      <div class="height-row">
-        <div>
-          <input type="number" id="feet" placeholder="Feet" min="3" max="8">
+  <!-- SETUP SCREEN -->
+  <div class="screen" id="setupScreen">
+    <div class="card">
+      <div class="section-title">Your Info</div>
+      <div class="form-group">
+        <label>Height</label>
+        <div class="height-row">
+          <div><input type="number" id="feet" placeholder="Feet" min="3" max="8"></div>
+          <div><input type="number" id="inches" placeholder="Inches" min="0" max="11"></div>
         </div>
-        <div>
-          <input type="number" id="inches" placeholder="Inches" min="0" max="11">
+        <div class="error" id="heightError">Enter a valid height.</div>
+      </div>
+      <div class="form-group">
+        <label>Weight (lbs)</label>
+        <input type="number" id="weight" placeholder="e.g. 170" min="50" max="700">
+        <div class="error" id="weightError">Enter a valid weight.</div>
+      </div>
+      <div class="form-group">
+        <label>Age</label>
+        <input type="number" id="age" placeholder="e.g. 25" min="10" max="120">
+        <div class="error" id="ageError">Enter a valid age.</div>
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <select id="gender">
+          <option value="">Select...</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <div class="error" id="genderError">Select a gender.</div>
+      </div>
+      <div class="form-group">
+        <label>Activity Level</label>
+        <select id="activity">
+          <option value="">Select...</option>
+          <option value="1.2">Sedentary (little or no exercise)</option>
+          <option value="1.375">Lightly active (1-3 days/week)</option>
+          <option value="1.55">Moderately active (3-5 days/week)</option>
+          <option value="1.725">Very active (6-7 days/week)</option>
+          <option value="1.9">Extra active (physical job + exercise)</option>
+        </select>
+        <div class="error" id="activityError">Select an activity level.</div>
+      </div>
+      <div class="form-group">
+        <label>Goal</label>
+        <div class="goal-selector">
+          <button class="goal-btn active" data-goal="lose" onclick="selectGoal('lose')">Lose</button>
+          <button class="goal-btn" data-goal="maintain" onclick="selectGoal('maintain')">Maintain</button>
+          <button class="goal-btn" data-goal="gain" onclick="selectGoal('gain')">Gain</button>
         </div>
       </div>
-      <div class="error" id="heightError">Please enter a valid height.</div>
+      <button onclick="saveProfile()">Save & Start Tracking</button>
     </div>
-
-    <div class="form-group">
-      <label>Weight (lbs)</label>
-      <input type="number" id="weight" placeholder="e.g. 170" min="50" max="700">
-      <div class="error" id="weightError">Please enter a valid weight.</div>
-    </div>
-
-    <div class="form-group">
-      <label>Age</label>
-      <input type="number" id="age" placeholder="e.g. 25" min="10" max="120">
-      <div class="error" id="ageError">Please enter a valid age.</div>
-    </div>
-
-    <div class="form-group">
-      <label>Gender</label>
-      <select id="gender">
-        <option value="">Select...</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
-      <div class="error" id="genderError">Please select a gender.</div>
-    </div>
-
-    <div class="form-group">
-      <label>Activity Level</label>
-      <select id="activity">
-        <option value="">Select...</option>
-        <option value="1.2">Sedentary (little or no exercise)</option>
-        <option value="1.375">Lightly active (1-3 days/week)</option>
-        <option value="1.55">Moderately active (3-5 days/week)</option>
-        <option value="1.725">Very active (6-7 days/week)</option>
-        <option value="1.9">Extra active (physical job + exercise)</option>
-      </select>
-      <div class="error" id="activityError">Please select an activity level.</div>
-    </div>
-
-    <button onclick="calculate()">Calculate My Macros</button>
   </div>
 
-  <div id="results">
-    <div class="card">
-      <div class="bmr-display">
-        <div class="label-text">Basal Metabolic Rate</div>
-        <div class="value" id="bmrValue">--</div>
-        <div class="label-text">calories/day</div>
-      </div>
-      <div class="tdee-display">
-        <div class="label-text">Total Daily Energy Expenditure</div>
-        <div class="value" id="tdeeValue">--</div>
-        <div class="label-text">calories/day</div>
-      </div>
+  <!-- DASHBOARD SCREEN (daily log) -->
+  <div class="screen" id="dashScreen">
+    <div class="date-nav">
+      <button onclick="changeDate(-1)">&larr;</button>
+      <div class="date-label" id="dateLabel"></div>
+      <button onclick="changeDate(1)">&rarr;</button>
     </div>
 
-    <div class="card">
-      <div class="section-title">Weekly Goal</div>
-      <div class="goal-selector">
-        <button class="goal-btn active" data-goal="lose" onclick="setGoal('lose')">Lose Weight</button>
-        <button class="goal-btn" data-goal="maintain" onclick="setGoal('maintain')">Maintain</button>
-        <button class="goal-btn" data-goal="gain" onclick="setGoal('gain')">Gain Weight</button>
-      </div>
-
-      <div class="section-title">Daily Breakdown</div>
-      <div id="weeklyBreakdown"></div>
-
-      <div class="weekly-total" id="weeklyTotal"></div>
+    <!-- Daily progress -->
+    <div class="card" id="progressCard">
+      <div class="stat-row" id="dailyStats"></div>
+      <div id="progressBars"></div>
     </div>
 
-    <button onclick="reset()">Start Over</button>
+    <!-- Add food -->
+    <div class="card">
+      <div class="section-title">Log Food</div>
+      <div class="form-group">
+        <label>Food Name</label>
+        <input type="text" id="foodName" placeholder="e.g. Chicken breast">
+      </div>
+      <div class="height-row">
+        <div class="form-group">
+          <label>Calories</label>
+          <input type="number" id="foodCal" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label>Protein (g)</label>
+          <input type="number" id="foodProtein" placeholder="0">
+        </div>
+      </div>
+      <div class="height-row">
+        <div class="form-group">
+          <label>Carbs (g)</label>
+          <input type="number" id="foodCarbs" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label>Fat (g)</label>
+          <input type="number" id="foodFat" placeholder="0">
+        </div>
+      </div>
+      <button onclick="addFood()">Add Entry</button>
+    </div>
+
+    <!-- Food log -->
+    <div class="card">
+      <div class="section-title">Today's Log</div>
+      <div id="foodLog"></div>
+    </div>
+  </div>
+
+  <!-- HISTORY SCREEN -->
+  <div class="screen" id="historyScreen">
+    <div class="card">
+      <div class="section-title">History (Last 7 Days)</div>
+      <div id="historyList"></div>
+    </div>
+  </div>
+
+  <!-- PROFILE SCREEN -->
+  <div class="screen" id="profileScreen">
+    <div class="card">
+      <div class="section-title">Your Profile</div>
+      <div id="profileInfo"></div>
+      <div class="btn-row">
+        <button class="btn-secondary" onclick="editProfile()">Edit Profile</button>
+        <button class="btn-danger" onclick="clearAllData()">Clear All Data</button>
+      </div>
+    </div>
   </div>
 </div>
 
+<!-- Bottom navigation -->
+<nav class="nav" id="navBar" style="display:none;">
+  <button class="nav-btn active" data-screen="dashScreen" onclick="showScreen('dashScreen')">
+    <span class="nav-icon">&#9783;</span>Today
+  </button>
+  <button class="nav-btn" data-screen="historyScreen" onclick="showScreen('historyScreen')">
+    <span class="nav-icon">&#9776;</span>History
+  </button>
+  <button class="nav-btn" data-screen="profileScreen" onclick="showScreen('profileScreen')">
+    <span class="nav-icon">&#9881;</span>Profile
+  </button>
+</nav>
+
 <script>
-  const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  let currentTDEE = 0;
-  let currentGoal = 'lose';
-  let userWeight = 0;
+  // ---- Storage helpers ----
+  function loadData(key, fallback) {
+    try { return JSON.parse(localStorage.getItem(key)) || fallback; }
+    catch { return fallback; }
+  }
+  function saveData(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 
-  function validate() {
-    let valid = true;
-    const fields = [
-      { id: 'feet', err: 'heightError', check: v => v >= 3 && v <= 8 },
-      { id: 'inches', err: 'heightError', check: v => v >= 0 && v <= 11 },
-      { id: 'weight', err: 'weightError', check: v => v >= 50 && v <= 700 },
-      { id: 'age', err: 'ageError', check: v => v >= 10 && v <= 120 },
-      { id: 'gender', err: 'genderError', check: v => v === 'male' || v === 'female' },
-      { id: 'activity', err: 'activityError', check: v => v !== '' },
-    ];
+  // ---- State ----
+  let profile = loadData('mt_profile', null);
+  let foodLogs = loadData('mt_logs', {});
+  let viewDate = todayStr();
+  let selectedGoal = 'lose';
 
-    // Reset errors
-    document.querySelectorAll('.error').forEach(e => e.style.display = 'none');
-
-    for (const f of fields) {
-      const el = document.getElementById(f.id);
-      const val = el.tagName === 'SELECT' ? el.value : parseFloat(el.value);
-      if (!f.check(val)) {
-        document.getElementById(f.err).style.display = 'block';
-        valid = false;
-      }
-    }
-    return valid;
+  function todayStr() {
+    const d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
   }
 
-  function calculate() {
-    if (!validate()) return;
-
-    const feet = parseFloat(document.getElementById('feet').value);
-    const inches = parseFloat(document.getElementById('inches').value);
-    const weight = parseFloat(document.getElementById('weight').value);
-    const age = parseFloat(document.getElementById('age').value);
-    const gender = document.getElementById('gender').value;
-    const activity = parseFloat(document.getElementById('activity').value);
-
-    userWeight = weight;
-
-    // Convert to metric for Mifflin-St Jeor
-    const heightCm = (feet * 12 + inches) * 2.54;
-    const weightKg = weight * 0.453592;
-
-    // Mifflin-St Jeor Equation
-    let bmr;
-    if (gender === 'male') {
-      bmr = 10 * weightKg + 6.25 * heightCm - 5 * age + 5;
-    } else {
-      bmr = 10 * weightKg + 6.25 * heightCm - 5 * age - 161;
-    }
-
-    bmr = Math.round(bmr);
-    currentTDEE = Math.round(bmr * activity);
-
-    document.getElementById('bmrValue').textContent = bmr.toLocaleString();
-    document.getElementById('tdeeValue').textContent = currentTDEE.toLocaleString();
-
-    document.getElementById('inputForm').style.display = 'none';
-    document.getElementById('results').style.display = 'block';
-
-    setGoal(currentGoal);
+  function formatDate(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const dt = new Date(y, m-1, d);
+    const today = todayStr();
+    const yesterday = shiftDate(today, -1);
+    if (dateStr === today) return 'Today';
+    if (dateStr === yesterday) return 'Yesterday';
+    return dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
   }
 
-  function getGoalCalories(tdee, goal) {
+  function shiftDate(dateStr, days) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const dt = new Date(y, m-1, d);
+    dt.setDate(dt.getDate() + days);
+    return dt.getFullYear() + '-' + String(dt.getMonth()+1).padStart(2,'0') + '-' + String(dt.getDate()).padStart(2,'0');
+  }
+
+  // ---- BMR / Macros ----
+  function calcBMR(p) {
+    const heightCm = (p.feet * 12 + p.inches) * 2.54;
+    const weightKg = p.weight * 0.453592;
+    if (p.gender === 'male') return Math.round(10 * weightKg + 6.25 * heightCm - 5 * p.age + 5);
+    return Math.round(10 * weightKg + 6.25 * heightCm - 5 * p.age - 161);
+  }
+
+  function calcTDEE(p) {
+    return Math.round(calcBMR(p) * p.activity);
+  }
+
+  function goalCalories(tdee, goal) {
     if (goal === 'lose') return Math.round(tdee - 500);
     if (goal === 'gain') return Math.round(tdee + 300);
     return tdee;
   }
 
-  function getMacros(calories, weightLbs) {
-    // Protein: 1g per lb of body weight (4 cal/g)
-    const protein = Math.round(weightLbs);
-    const proteinCal = protein * 4;
-
-    // Fat: 25% of calories (9 cal/g)
-    const fatCal = calories * 0.25;
-    const fat = Math.round(fatCal / 9);
-
-    // Carbs: remaining calories (4 cal/g)
-    const carbsCal = calories - proteinCal - fatCal;
-    const carbs = Math.round(carbsCal / 4);
-
-    return { calories, protein, carbs, fat };
+  function getTargets(p) {
+    const cal = goalCalories(calcTDEE(p), p.goal);
+    const protein = Math.round(p.weight);
+    const fat = Math.round((cal * 0.25) / 9);
+    const carbs = Math.round((cal - protein * 4 - fat * 9) / 4);
+    return { calories: cal, protein, carbs, fat };
   }
 
-  function setGoal(goal) {
-    currentGoal = goal;
-
-    document.querySelectorAll('.goal-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.goal === goal);
+  // ---- Navigation ----
+  function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.nav-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.screen === id);
     });
+    if (id === 'dashScreen') renderDashboard();
+    if (id === 'historyScreen') renderHistory();
+    if (id === 'profileScreen') renderProfile();
+  }
 
-    const dailyCal = getGoalCalories(currentTDEE, goal);
-    const macros = getMacros(dailyCal, userWeight);
+  // ---- Setup / Profile ----
+  function selectGoal(goal) {
+    selectedGoal = goal;
+    document.querySelectorAll('.goal-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.goal === goal);
+    });
+  }
 
-    let html = '';
-    let totalCal = 0;
+  function validateSetup() {
+    let ok = true;
+    document.querySelectorAll('.error').forEach(e => e.style.display = 'none');
+    const checks = [
+      ['feet', 'heightError', v => v >= 3 && v <= 8],
+      ['inches', 'heightError', v => v >= 0 && v <= 11],
+      ['weight', 'weightError', v => v >= 50 && v <= 700],
+      ['age', 'ageError', v => v >= 10 && v <= 120],
+      ['gender', 'genderError', v => v === 'male' || v === 'female'],
+      ['activity', 'activityError', v => v !== ''],
+    ];
+    for (const [id, err, check] of checks) {
+      const el = document.getElementById(id);
+      const val = el.tagName === 'SELECT' ? el.value : parseFloat(el.value);
+      if (!check(val)) {
+        document.getElementById(err).style.display = 'block';
+        ok = false;
+      }
+    }
+    return ok;
+  }
 
-    for (const day of DAYS) {
-      totalCal += macros.calories;
-      html += `
-        <div class="day-row">
-          <div class="day-name">${day}</div>
-          <div class="macros">
-            <span class="macro-pill macro-cal">${macros.calories} cal</span>
-            <span class="macro-pill macro-protein">${macros.protein}g P</span>
-            <span class="macro-pill macro-carbs">${macros.carbs}g C</span>
-            <span class="macro-pill macro-fat">${macros.fat}g F</span>
+  function saveProfile() {
+    if (!validateSetup()) return;
+    profile = {
+      feet: parseFloat(document.getElementById('feet').value),
+      inches: parseFloat(document.getElementById('inches').value),
+      weight: parseFloat(document.getElementById('weight').value),
+      age: parseFloat(document.getElementById('age').value),
+      gender: document.getElementById('gender').value,
+      activity: parseFloat(document.getElementById('activity').value),
+      goal: selectedGoal,
+    };
+    saveData('mt_profile', profile);
+    document.getElementById('navBar').style.display = 'flex';
+    showScreen('dashScreen');
+  }
+
+  function editProfile() {
+    if (profile) {
+      document.getElementById('feet').value = profile.feet;
+      document.getElementById('inches').value = profile.inches;
+      document.getElementById('weight').value = profile.weight;
+      document.getElementById('age').value = profile.age;
+      document.getElementById('gender').value = profile.gender;
+      document.getElementById('activity').value = profile.activity;
+      selectedGoal = profile.goal;
+      selectGoal(selectedGoal);
+    }
+    document.getElementById('navBar').style.display = 'flex';
+    showScreen('setupScreen');
+    document.getElementById('setupScreen').classList.add('active');
+  }
+
+  function clearAllData() {
+    if (confirm('This will delete your profile and all food logs. Are you sure?')) {
+      localStorage.removeItem('mt_profile');
+      localStorage.removeItem('mt_logs');
+      profile = null;
+      foodLogs = {};
+      document.getElementById('navBar').style.display = 'none';
+      showScreen('setupScreen');
+    }
+  }
+
+  function renderProfile() {
+    if (!profile) return;
+    const bmr = calcBMR(profile);
+    const tdee = calcTDEE(profile);
+    const targets = getTargets(profile);
+    const goalLabels = { lose: 'Lose Weight', maintain: 'Maintain', gain: 'Gain Weight' };
+    const actLabels = { '1.2': 'Sedentary', '1.375': 'Lightly Active', '1.55': 'Moderately Active', '1.725': 'Very Active', '1.9': 'Extra Active' };
+
+    document.getElementById('profileInfo').innerHTML = `
+      <div style="margin-bottom:1rem;">
+        <p><strong>Height:</strong> ${profile.feet}'${profile.inches}"</p>
+        <p><strong>Weight:</strong> ${profile.weight} lbs</p>
+        <p><strong>Age:</strong> ${profile.age}</p>
+        <p><strong>Gender:</strong> ${profile.gender.charAt(0).toUpperCase() + profile.gender.slice(1)}</p>
+        <p><strong>Activity:</strong> ${actLabels[String(profile.activity)] || profile.activity}</p>
+        <p><strong>Goal:</strong> ${goalLabels[profile.goal]}</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat-item"><div class="stat-value">${bmr}</div><div class="stat-label">BMR</div></div>
+        <div class="stat-item"><div class="stat-value">${tdee}</div><div class="stat-label">TDEE</div></div>
+        <div class="stat-item"><div class="stat-value">${targets.calories}</div><div class="stat-label">Daily Goal</div></div>
+      </div>
+    `;
+  }
+
+  // ---- Dashboard ----
+  function changeDate(delta) {
+    const t = todayStr();
+    const next = shiftDate(viewDate, delta);
+    if (next > t) return; // can't go past today
+    viewDate = next;
+    renderDashboard();
+  }
+
+  function getDayTotals(dateStr) {
+    const entries = foodLogs[dateStr] || [];
+    return entries.reduce((t, e) => ({
+      calories: t.calories + (e.calories || 0),
+      protein: t.protein + (e.protein || 0),
+      carbs: t.carbs + (e.carbs || 0),
+      fat: t.fat + (e.fat || 0),
+    }), { calories: 0, protein: 0, carbs: 0, fat: 0 });
+  }
+
+  function renderDashboard() {
+    if (!profile) return;
+    const targets = getTargets(profile);
+    const totals = getDayTotals(viewDate);
+    const entries = foodLogs[viewDate] || [];
+
+    document.getElementById('dateLabel').textContent = formatDate(viewDate);
+
+    // Stats
+    document.getElementById('dailyStats').innerHTML = `
+      <div class="stat-item"><div class="stat-value">${totals.calories}</div><div class="stat-label">Cal</div></div>
+      <div class="stat-item"><div class="stat-value">${totals.protein}g</div><div class="stat-label">Protein</div></div>
+      <div class="stat-item"><div class="stat-value">${totals.carbs}g</div><div class="stat-label">Carbs</div></div>
+      <div class="stat-item"><div class="stat-value">${totals.fat}g</div><div class="stat-label">Fat</div></div>
+    `;
+
+    // Progress bars
+    const bars = [
+      ['Calories', totals.calories, targets.calories, 'cal'],
+      ['Protein', totals.protein, targets.protein, 'protein'],
+      ['Carbs', totals.carbs, targets.carbs, 'carbs'],
+      ['Fat', totals.fat, targets.fat, 'fat'],
+    ];
+
+    document.getElementById('progressBars').innerHTML = bars.map(([label, cur, goal, cls]) => {
+      const pct = goal > 0 ? Math.min((cur / goal) * 100, 100) : 0;
+      const over = cur > goal;
+      return `
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>${label}</span>
+            <span>${cur} / ${goal}${label === 'Calories' ? '' : 'g'}</span>
           </div>
+          <div class="progress-bar">
+            <div class="progress-fill ${over ? 'fill-over' : 'fill-' + cls}" style="width:${pct}%"></div>
+          </div>
+        </div>`;
+    }).join('');
+
+    // Food entries
+    if (entries.length === 0) {
+      document.getElementById('foodLog').innerHTML = '<div class="empty-state">No food logged yet. Add your first entry above!</div>';
+    } else {
+      document.getElementById('foodLog').innerHTML = entries.map((e, i) => `
+        <div class="food-entry">
+          <div>
+            <div class="food-name">${escHTML(e.name)}</div>
+            <div class="food-macros">
+              <span class="macro-pill macro-cal">${e.calories} cal</span>
+              <span class="macro-pill macro-protein">${e.protein}g P</span>
+              <span class="macro-pill macro-carbs">${e.carbs}g C</span>
+              <span class="macro-pill macro-fat">${e.fat}g F</span>
+            </div>
+          </div>
+          <button class="delete-btn" onclick="deleteFood(${i})" title="Delete">&times;</button>
+        </div>
+      `).join('');
+    }
+  }
+
+  function escHTML(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  // ---- Food logging ----
+  function addFood() {
+    const name = document.getElementById('foodName').value.trim();
+    if (!name) { document.getElementById('foodName').focus(); return; }
+
+    const entry = {
+      name,
+      calories: Math.max(0, parseInt(document.getElementById('foodCal').value) || 0),
+      protein: Math.max(0, parseInt(document.getElementById('foodProtein').value) || 0),
+      carbs: Math.max(0, parseInt(document.getElementById('foodCarbs').value) || 0),
+      fat: Math.max(0, parseInt(document.getElementById('foodFat').value) || 0),
+    };
+
+    if (!foodLogs[viewDate]) foodLogs[viewDate] = [];
+    foodLogs[viewDate].push(entry);
+    saveData('mt_logs', foodLogs);
+
+    // Clear inputs
+    document.getElementById('foodName').value = '';
+    document.getElementById('foodCal').value = '';
+    document.getElementById('foodProtein').value = '';
+    document.getElementById('foodCarbs').value = '';
+    document.getElementById('foodFat').value = '';
+
+    renderDashboard();
+  }
+
+  function deleteFood(index) {
+    if (!foodLogs[viewDate]) return;
+    foodLogs[viewDate].splice(index, 1);
+    if (foodLogs[viewDate].length === 0) delete foodLogs[viewDate];
+    saveData('mt_logs', foodLogs);
+    renderDashboard();
+  }
+
+  // ---- History ----
+  function renderHistory() {
+    if (!profile) return;
+    const targets = getTargets(profile);
+    let html = '';
+    let hasData = false;
+
+    for (let i = 0; i < 7; i++) {
+      const d = shiftDate(todayStr(), -i);
+      const totals = getDayTotals(d);
+      const entries = foodLogs[d] || [];
+      if (entries.length === 0 && i > 0) continue;
+      hasData = true;
+
+      const calPct = targets.calories > 0 ? Math.round((totals.calories / targets.calories) * 100) : 0;
+
+      html += `
+        <div class="history-day">
+          <div class="history-date">${formatDate(d)}</div>
+          <div class="history-macros">
+            <span class="macro-pill macro-cal">${totals.calories} / ${targets.calories} cal (${calPct}%)</span>
+            <span class="macro-pill macro-protein">${totals.protein}g P</span>
+            <span class="macro-pill macro-carbs">${totals.carbs}g C</span>
+            <span class="macro-pill macro-fat">${totals.fat}g F</span>
+          </div>
+          <div style="font-size:0.75rem;color:#64748b;margin-top:0.2rem;">${entries.length} ${entries.length === 1 ? 'entry' : 'entries'}</div>
         </div>`;
     }
 
-    document.getElementById('weeklyBreakdown').innerHTML = html;
-    document.getElementById('weeklyTotal').innerHTML =
-      `Weekly Total: <span>${totalCal.toLocaleString()} calories</span>`;
+    if (!hasData) html = '<div class="empty-state">No history yet. Start logging food!</div>';
+    document.getElementById('historyList').innerHTML = html;
   }
 
-  function reset() {
-    document.getElementById('inputForm').style.display = 'block';
-    document.getElementById('results').style.display = 'none';
+  // ---- Init ----
+  if (profile) {
+    document.getElementById('navBar').style.display = 'flex';
+    showScreen('dashScreen');
+  } else {
+    showScreen('setupScreen');
+    document.getElementById('setupScreen').classList.add('active');
   }
 </script>
 
